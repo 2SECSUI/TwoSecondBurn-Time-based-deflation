@@ -7,13 +7,14 @@
 
 <style>
     :root {
-        --bg: #050814;
-        --bg-alt: #070b18;
-        --card: #0b1020;
+        --bg: #020617;
+        --bg-alt: #050816;
+        --card: #050b1f;
         --accent: #00eaff;
-        --accent-soft: #00eaff33;
         --accent-strong: #00c3ff;
-        --text-main: #f5f5f5;
+        --accent-soft: #00eaff33;
+        --accent-pink: #ff4bcb;
+        --text-main: #f9fafb;
         --text-muted: #9ca3af;
         --border-subtle: #1f2937;
         --danger: #ff4b81;
@@ -28,7 +29,8 @@
     body {
         margin: 0;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+        background:
+            radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
         color: var(--text-main);
     }
 
@@ -42,7 +44,7 @@
     }
 
     header {
-        padding: 30px 16px 40px;
+        padding: 32px 16px 40px;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -54,39 +56,39 @@
         inset: -40%;
         background:
             radial-gradient(circle at 10% 0, #00eaff22 0, transparent 55%),
-            radial-gradient(circle at 90% 0, #6366f122 0, transparent 55%);
+            radial-gradient(circle at 90% 0, #ff4bcb22 0, transparent 55%);
         opacity: 0.9;
         pointer-events: none;
     }
 
     .hero-inner {
         position: relative;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
         z-index: 1;
     }
 
     .hero-logo {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         border: 2px solid var(--accent);
-        box-shadow: 0 0 25px var(--accent-soft);
+        box-shadow: 0 0 30px var(--accent-soft);
         margin-bottom: 12px;
-        background: radial-gradient(circle at 30% 20%, #ffffff55 0, transparent 45%), #020617;
         object-fit: contain;
+        background: radial-gradient(circle at 30% 20%, #ffffff55 0, transparent 45%), #020617;
     }
 
     .hero-title {
         font-size: 40px;
         margin: 0;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
     }
 
     .hero-subtitle {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 15px;
         color: var(--text-muted);
         max-width: 640px;
         margin-left: auto;
@@ -106,7 +108,7 @@
         border-radius: 999px;
         border: 1px solid var(--accent-soft);
         background: #020617aa;
-        font-size: 12px;
+        font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: var(--text-muted);
@@ -144,7 +146,7 @@
     }
 
     main {
-        max-width: 1100px;
+        max-width: 1150px;
         margin: 0 auto 60px;
         padding: 0 16px 40px;
     }
@@ -157,13 +159,13 @@
         margin-bottom: 30px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         .grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         .grid {
             grid-template-columns: 1fr;
         }
@@ -342,36 +344,6 @@
         font-size: 13px;
     }
 
-    #burn-log {
-        margin-top: 10px;
-        max-height: 360px;
-        overflow-y: auto;
-        padding-right: 4px;
-    }
-
-    #burn-log div {
-        background: #020617;
-        padding: 8px 10px;
-        margin: 5px 0;
-        border-radius: 6px;
-        border-left: 3px solid var(--accent);
-        font-size: 12px;
-        color: #e5e7eb;
-    }
-
-    #burn-log div:nth-child(odd) {
-        background: #020617dd;
-    }
-
-    .footer {
-        text-align: center;
-        padding: 18px 10px 26px;
-        font-size: 12px;
-        color: var(--text-muted);
-        border-top: 1px solid #020617;
-        background: #020617;
-    }
-
     .progress-container {
         background: #111827;
         border: 1px solid #1f2937;
@@ -391,21 +363,66 @@
     .progress-fill {
         height: 100%;
         width: 0%;
-        background: linear-gradient(90deg, #00eaff, #0066ff);
+        background: linear-gradient(90deg, #00eaff, #ff4bcb);
         transition: width 1s ease-out;
     }
 
-    .chart-container {
-        margin-top: 20px;
-        background: #0b1020;
-        border: 1px solid #1f2937;
-        border-radius: 12px;
-        padding: 14px;
+    .countdown {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
     }
 
-    svg {
-        width: 100%;
-        height: 200px;
+    .countdown-box {
+        background: #020617dd;
+        border-radius: 10px;
+        padding: 8px 10px;
+        border: 1px solid #1f2937;
+        min-width: 70px;
+        text-align: center;
+    }
+
+    .countdown-value {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .countdown-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+    }
+
+    #burn-log {
+        margin-top: 10px;
+        max-height: 360px;
+        overflow-y: auto;
+        padding-right: 4px;
+    }
+
+    #burn-log div {
+        background: #020617;
+        padding: 8px 10px;
+        margin: 5px 0;
+        border-radius: 6px;
+        border-left: 3px solid var(--accent);
+        font-size: 13px;
+        color: #e5e7eb;
+    }
+
+    #burn-log div:nth-child(odd) {
+        background: #020617dd;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 18px 10px 26px;
+        font-size: 12px;
+        color: var(--text-muted);
+        border-top: 1px solid #020617;
+        background: #020617;
     }
 </style>
 </head>
@@ -414,16 +431,16 @@
 
 <header>
     <div class="hero-inner">
-        <img src="logo.png" alt="2SEC Logo" class="hero-logo">
+        <img src="logo.png?v=3" alt="2SEC Logo" class="hero-logo">
         <h1 class="hero-title">2SEC</h1>
         <p class="hero-subtitle">
-            Time‑based, deflationary Sui token with a transparent, on‑chain burn vault and a hard‑coded 10‑year schedule.
+            Time‑based, deflationary Sui token with a transparent burn vault, fixed 150M circulating supply, and a hard‑coded 10‑year schedule.
         </p>
 
         <div class="hero-badges">
-            <div class="badge">1,000,000,000 SEC2 • Fixed Supply</div>
-            <div class="badge">Boost Phase: 15 SEC2 / sec</div>
-            <div class="badge">Normal Phase: 2 SEC2 / sec</div>
+            <div class="badge">1,000,000,000 SEC2 • Fixed Total Supply</div>
+            <div class="badge">150,000,000 SEC2 • Circulating</div>
+            <div class="badge">850,000,000 SEC2 • Burn Vault</div>
         </div>
 
         <div class="hero-actions">
@@ -448,26 +465,26 @@
         </div>
 
         <div class="stat-card">
-            <div class="stat-label">Burned (Vault Balance)</div>
+            <div class="stat-label">Circulating Supply</div>
+            <div class="stat-value">150,000,000 SEC2</div>
+            <div class="stat-tag">Fixed circulating amount • Vault holds the rest</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Vault Balance (Live)</div>
             <div class="stat-value" id="vault-balance">Loading...</div>
             <div class="stat-tag">
                 <span class="pill">
                     <span class="pill-dot"></span>
-                    Live from on‑chain burn vault
+                    On‑chain burn vault
                 </span>
             </div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-label">Circulating Supply</div>
-            <div class="stat-value" id="current-supply">Loading...</div>
-            <div class="stat-tag">Total supply minus vault balance</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Theoretical 10‑Year Burn</div>
-            <div class="stat-value" id="total-theoretical">Loading...</div>
-            <div class="stat-tag">Based on 200‑day boost + 2 SEC2/sec thereafter</div>
+            <div class="stat-label">Total Burned (From Vault)</div>
+            <div class="stat-value" id="burned-total">Loading...</div>
+            <div class="stat-tag">Initial 850M minus current vault balance</div>
         </div>
     </div>
 
@@ -503,7 +520,7 @@
                 <div class="timeline-item">
                     <div class="timeline-label">T0 • Vault Initialization</div>
                     <div class="timeline-text">
-                        The burn vault is created and funded with a large internal pool of SEC2. The clock starts when
+                        The burn vault is created and funded with 850,000,000 SEC2. The clock starts when
                         <code>interact</code> is first called and the vault is marked initialized.
                     </div>
                 </div>
@@ -525,11 +542,14 @@
         </div>
     </section>
 
-    <!-- Burn schedule progress -->
+    <!-- Burn schedule progress + countdown + rate -->
     <section>
         <div class="card">
-            <h2>Burn Schedule Progress</h2>
-            <p>The percentage of the 10‑year burn schedule completed so far.</p>
+            <h2>Burn Schedule Progress & Rate</h2>
+            <p>
+                Progress is measured against the initial 850,000,000 SEC2 in the burn vault. When the vault is full,
+                progress is 0%. When the vault is empty, the schedule is 100% complete.
+            </p>
 
             <div class="progress-container">
                 <div><strong id="progress-label">Loading...</strong></div>
@@ -537,17 +557,37 @@
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Burn chart -->
-    <section>
-        <div class="card">
-            <h2>Burn Chart (Based on Log)</h2>
-            <p>A simple visual of burn amounts over time using your burn log entries.</p>
+            <div style="margin-top: 16px;">
+                <p><strong>Current Phase:</strong> <span id="current-phase">Loading...</span></p>
+                <p><strong>Current Burn Rate:</strong> <span id="current-rate">Loading...</span></p>
+                <p><strong>Burn Per Hour:</strong> <span id="burn-per-hour">Loading...</span></p>
+                <p><strong>Burn Per Day:</strong> <span id="burn-per-day">Loading...</span></p>
+            </div>
 
-            <div class="chart-container">
-                <svg id="burn-chart"></svg>
+            <div style="margin-top: 16px;">
+                <h3 style="margin: 0 0 6px; font-size: 16px;">Countdown to End of Boost Phase</h3>
+                <p style="margin: 0 0 8px; color: var(--text-muted);">
+                    When this reaches zero, the burn rate transitions from 15 SEC2/sec to 2 SEC2/sec.
+                </p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="cd-days">--</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="cd-hours">--</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="cd-mins">--</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="cd-secs">--</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -555,14 +595,14 @@
     <!-- Burn log -->
     <section>
         <div class="card">
-            <h2>Burn Log (On‑Chain Events)</h2>
+            <h2>Burn Log</h2>
             <p>
-                This log is generated off‑chain by a monitoring script that calls <code>interact</code>, verifies the math,
-                and appends each burn cycle here. Entries are committed to GitHub and deployed via GitHub Pages for
-                a fully auditable history.
+                Each entry is generated by an off‑chain monitor that calls <code>interact</code>, verifies the math, and
+                appends a line with timestamp and amount burned.
             </p>
             <div id="burn-log">
-                <!-- Your PowerShell script appends <div> entries here -->
+                <!-- Your PowerShell script appends entries here, e.g.:
+                     2026-01-17 01:40:12 — Burned 12345 SEC2 -->
             </div>
         </div>
     </section>
@@ -599,26 +639,29 @@
     const RPC = "https://fullnode.mainnet.sui.io:443";
     const VAULT_ID = "0x02edb12e7affd2ef0e77788ff6596ac854ec9a91645479acca78baad177e589a";
     const DECIMALS = 1_000_000_000;
-    const TOTAL_SUPPLY = 1_000_000_000;
+
+    const INITIAL_VAULT = 850_000_000;
+    const BOOST_RATE = 15;
+    const NORMAL_RATE = 2;
+
+    let boostEndTs = null;
+    let countdownInterval = null;
 
     function calculateBurnSchedule() {
         const secondsPerDay = 86400;
 
-        const phase1 = 200 * secondsPerDay * 15;
+        const phase1 = 200 * secondsPerDay * BOOST_RATE;
         const totalDays10Years = 3650;
         const phase2Days = totalDays10Years - 200;
-        const phase2 = phase2Days * secondsPerDay * 2;
+        const phase2 = phase2Days * secondsPerDay * NORMAL_RATE;
 
         document.getElementById("phase1-burn").textContent = phase1.toLocaleString() + " SEC2";
         document.getElementById("phase2-burn").textContent = phase2.toLocaleString() + " SEC2";
-        document.getElementById("total-theoretical").textContent =
-            (phase1 + phase2).toLocaleString() + " SEC2";
-
-        return { phase1, phase2, total: phase1 + phase2 };
     }
 
-    function updateProgressBar(vaultBalance, theoreticalTotal) {
-        const percent = Math.min((vaultBalance / theoreticalTotal) * 100, 100);
+    function updateProgressBar(vaultBalance) {
+        const burned = INITIAL_VAULT - vaultBalance;
+        const percent = Math.max(0, Math.min((burned / INITIAL_VAULT) * 100, 100));
 
         document.getElementById("progress-label").textContent =
             percent.toFixed(2) + "% of schedule completed";
@@ -626,44 +669,76 @@
         document.getElementById("progress-fill").style.width = percent + "%";
     }
 
-    function drawBurnChart() {
-        const logDiv = document.getElementById("burn-log");
-        const entries = [...logDiv.querySelectorAll("div")];
+    function updateRateAndBurnStats(vaultBalance) {
+        const nowSec = Date.now() / 1000;
 
-        if (entries.length === 0) return;
+        let currentRate = NORMAL_RATE;
+        let phaseLabel = "Normal";
 
-        const burns = entries.map(e => {
-            const match = e.textContent.match(/Burned:\s*(-?\d+)/);
-            return match ? parseInt(match[1]) : 0;
-        });
+        if (boostEndTs && nowSec < boostEndTs) {
+            currentRate = BOOST_RATE;
+            phaseLabel = "Boost";
+        }
 
-        const svg = document.getElementById("burn-chart");
-        svg.innerHTML = "";
+        const burnPerHour = currentRate * 3600;
+        const burnPerDay = currentRate * 86400;
 
-        const width = svg.clientWidth || 400;
-        const height = svg.clientHeight || 200;
+        document.getElementById("current-phase").textContent = phaseLabel + " phase";
+        document.getElementById("current-rate").textContent = currentRate.toLocaleString() + " SEC2 / second";
+        document.getElementById("burn-per-hour").textContent = burnPerHour.toLocaleString() + " SEC2 / hour";
+        document.getElementById("burn-per-day").textContent = burnPerDay.toLocaleString() + " SEC2 / day";
 
-        const maxBurn = Math.max(...burns, 1);
-        const step = burns.length > 1 ? width / (burns.length - 1) : width;
-
-        let path = "M 0 " + (height - (burns[0] / maxBurn) * height);
-
-        burns.forEach((b, i) => {
-            const x = i * step;
-            const y = height - (b / maxBurn) * height;
-            path += ` L ${x} ${y}`;
-        });
-
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        line.setAttribute("d", path);
-        line.setAttribute("stroke", "#00eaff");
-        line.setAttribute("stroke-width", "2");
-        line.setAttribute("fill", "none");
-
-        svg.appendChild(line);
+        const burned = INITIAL_VAULT - vaultBalance;
+        document.getElementById("burned-total").textContent =
+            burned.toLocaleString(undefined, { maximumFractionDigits: 2 }) + " SEC2";
     }
 
-    async function fetchVaultBalance(theoreticalTotal) {
+    function startCountdown() {
+        if (!boostEndTs) {
+            document.getElementById("cd-days").textContent = "--";
+            document.getElementById("cd-hours").textContent = "--";
+            document.getElementById("cd-mins").textContent = "--";
+            document.getElementById("cd-secs").textContent = "--";
+            return;
+        }
+
+        if (countdownInterval) clearInterval(countdownInterval);
+
+        function tick() {
+            const nowSec = Date.now() / 1000;
+            let remaining = Math.floor(boostEndTs - nowSec);
+
+            if (remaining <= 0) {
+                document.getElementById("cd-days").textContent = "0";
+                document.getElementById("cd-hours").textContent = "0";
+                document.getElementById("cd-mins").textContent = "0";
+                document.getElementById("cd-secs").textContent = "0";
+                document.getElementById("current-phase").textContent = "Normal phase";
+                document.getElementById("current-rate").textContent = NORMAL_RATE + " SEC2 / second";
+                document.getElementById("burn-per-hour").textContent = (NORMAL_RATE * 3600).toLocaleString() + " SEC2 / hour";
+                document.getElementById("burn-per-day").textContent = (NORMAL_RATE * 86400).toLocaleString() + " SEC2 / day";
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(remaining / 86400);
+            remaining %= 86400;
+            const hours = Math.floor(remaining / 3600);
+            remaining %= 3600;
+            const mins = Math.floor(remaining / 60);
+            const secs = remaining % 60;
+
+            document.getElementById("cd-days").textContent = days;
+            document.getElementById("cd-hours").textContent = hours;
+            document.getElementById("cd-mins").textContent = mins;
+            document.getElementById("cd-secs").textContent = secs;
+        }
+
+        tick();
+        countdownInterval = setInterval(tick, 1000);
+    }
+
+    async function fetchVaultAndSchedule() {
         try {
             const res = await fetch(RPC, {
                 method: "POST",
@@ -677,28 +752,30 @@
             });
 
             const data = await res.json();
-            const raw = Number(data?.result?.data?.content?.fields?.internal_pool ?? 0);
-            const tokens = raw / DECIMALS;
+            const fields = data?.result?.data?.content?.fields ?? {};
+
+            const raw = Number(fields.internal_pool ?? 0);
+            const vaultTokens = raw / DECIMALS;
 
             document.getElementById("vault-balance").textContent =
-                tokens.toLocaleString(undefined, { maximumFractionDigits: 2 }) + " SEC2";
+                vaultTokens.toLocaleString(undefined, { maximumFractionDigits: 2 }) + " SEC2";
 
-            const circulating = TOTAL_SUPPLY - tokens;
-            document.getElementById("current-supply").textContent =
-                circulating.toLocaleString(undefined, { maximumFractionDigits: 2 }) + " SEC2";
+            boostEndTs = Number(fields.boost_end_ts ?? 0);
 
-            updateProgressBar(tokens, theoreticalTotal);
-            drawBurnChart();
+            updateProgressBar(vaultTokens);
+            updateRateAndBurnStats(vaultTokens);
+            startCountdown();
 
         } catch (e) {
             document.getElementById("vault-balance").textContent = "Error";
-            document.getElementById("current-supply").textContent = "Error";
+            document.getElementById("burned-total").textContent = "Error";
+            document.getElementById("progress-label").textContent = "Error";
         }
     }
 
-    const schedule = calculateBurnSchedule();
-    fetchVaultBalance(schedule.total);
-    setInterval(() => fetchVaultBalance(schedule.total), 15000);
+    calculateBurnSchedule();
+    fetchVaultAndSchedule();
+    setInterval(fetchVaultAndSchedule, 15000);
 </script>
 
 </body>
