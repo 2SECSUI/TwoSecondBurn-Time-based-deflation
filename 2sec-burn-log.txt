@@ -512,3 +512,5 @@
 2026-01-20 17:08:03 | Before: 845113030 | After: 845103760 | Burned: 9270 | Expected: 9270
 2026-01-20 17:18:23 | Before: 845103760 | After: 845094460 | Burned: 9300 | Expected: 9300
 2026-01-20 17:28:40 | Before: 845094460 | After: 845085190 | Burned: 9270 | Expected: 9270
+2026-01-20 17:39:00 | Before: 845085190 | After: 845075905 | Burned: 9285 | Expected: 9285
+2026-01-20 17:40:03 | Before: 845075905 | After: 845074945 | Burned: 960 | Expected: 960
