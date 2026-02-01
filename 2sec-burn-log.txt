@@ -3775,3 +3775,4 @@
 2026-02-01 15:30:19 | Before: 829644445 | After: 829639735 | Burned: 4710 | Expected: 4710
 2026-02-01 15:36:00 | Before: 829639735 | After: 829634995 | Burned: 4740 | Expected: 4740
 2026-02-01 15:41:45 | Before: 829634995 | After: 829634995 | Burned: 0 | Expected: 0
+2026-02-01 15:47:00 | Before: 829629865 | After: 829624705 | Burned: 5160 | Expected: 5160
