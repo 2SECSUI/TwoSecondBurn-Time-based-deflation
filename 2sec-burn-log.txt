@@ -4904,3 +4904,4 @@
 2026-02-05 18:49:10 | Before: 824282380 | After: 824277610 | Burned: 4770 | Expected: 4770
 2026-02-05 18:54:30 | Before: 824277610 | After: 824277610 | Burned: 0 | Expected: 0
 2026-02-05 18:59:46 | Before: 824277610 | After: 824267230 | Burned: 10380 | Expected: 10380
+2026-02-05 19:05:01 | Before: 824272030 | After: 824267230 | Burned: 4800 | Expected: 4800
